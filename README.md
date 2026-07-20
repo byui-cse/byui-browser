@@ -12,6 +12,7 @@ crate ownership, and collaboration rules. Team overviews live in
 ```
 .
 ├── Cargo.toml           # Workspace root
+├── Makefile             # build / test / lint / release helpers
 ├── crates/
 │   ├── common/          # Shared types, errors, IPC (joint ownership)
 │   ├── html/            # HTML Team
@@ -46,17 +47,11 @@ rustup update stable
 ## Build & test
 
 ```bash
-cargo build          # build the browser binary and all crates
-cargo test           # unit tests across the workspace
-cargo fmt --all      # format
-cargo clippy --workspace --all-targets -- -D warnings
-```
-
-Run a single crate:
-
-```bash
-cargo test -p html
-cargo build -p css
+make build                 # build the workspace (debug)
+make test                  # unit tests across the workspace
+make test html             # tests for a single crate
+make lint                  # rustfmt check + clippy (-D warnings)
+make release linux         # release build for macos | linux | windows
 ```
 
 The binary entry point:
@@ -69,7 +64,7 @@ cargo run -p browser
 
 - Trunk-based development on `main`
 - Feature branches: `team/short-description` (e.g. `css/cascade-layers`)
-- Before merge: `cargo fmt`, `cargo clippy -- -D warnings`, and tests for changed crates
+- Before merge: `make lint` and `make test` (or `make test <crate>` for changed crates)
 - Cross-crate / `common` changes need review from affected owning teams
 - Record architecture decisions in [`docs/adr/`](docs/adr/)
 

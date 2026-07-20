@@ -12,7 +12,7 @@ env:
 
 jobs:
   check:
-    name: fmt, clippy, test
+    name: lint, test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,11 +25,8 @@ jobs:
       - name: Cache cargo
         uses: Swatinem/rust-cache@v2
 
-      - name: Format
-        run: cargo fmt --all -- --check
-
-      - name: Clippy
-        run: cargo clippy --workspace --all-targets -- -D warnings
+      - name: Lint
+        run: make lint
 
       - name: Test
-        run: cargo test --workspace
+        run: make test
