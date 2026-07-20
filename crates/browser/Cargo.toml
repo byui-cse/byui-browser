@@ -1,0 +1,30 @@
+[package]
+name = "browser"
+description = "Top-level browser binary that wires processes and crates together"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "browser"
+path = "src/main.rs"
+
+[dependencies]
+common = { workspace = true }
+html = { workspace = true }
+css = { workspace = true }
+layout = { workspace = true }
+paint = { workspace = true }
+render = { workspace = true }
+js = { workspace = true }
+webapis = { workspace = true }
+net = { workspace = true }
+storage = { workspace = true }
+security = { workspace = true }
+chrome = { workspace = true }
+devtools = { workspace = true }
+
+[lints]
+workspace = true

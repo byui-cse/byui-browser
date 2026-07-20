@@ -1,0 +1,24 @@
+# Rust / Cargo
+/target/
+**/*.rs.bk
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage / profiling
+*.profraw
+*.profdata
+/coverage/
+lcov.info
+
+# Fuzzing artifacts
+fuzz/artifacts/
+fuzz/corpus/
