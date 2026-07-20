@@ -1,0 +1,49 @@
+# Path ownership mirrors docs/TECH_ARCHITECTURE.md.
+#
+# @byui-cse/byui-browser-scrum-of-scrums — admins; can contribute, review any PR,
+# and own every path (listed on each rule so last-match-wins still includes them).
+
+# Default owner for paths without a more specific rule
+*                                      @byui-cse/byui-browser-scrum-of-scrums
+
+# Shared types — jointly maintained; changes need broad review
+/crates/common/                        @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-html @byui-cse/byui-browser-css @byui-cse/byui-browser-layout-rendering @byui-cse/byui-browser-js-engine @byui-cse/byui-browser-webapis @byui-cse/byui-browser-networking @byui-cse/byui-browser-security-storage @byui-cse/byui-browser-browser-ux @byui-cse/byui-browser-devtools
+
+# HTML Team
+/crates/html/                          @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-html
+
+# CSS Engine Team
+/crates/css/                           @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-css
+
+# Layout & Rendering Team
+/crates/layout/                        @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-layout-rendering
+/crates/paint/                         @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-layout-rendering
+/crates/render/                        @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-layout-rendering
+
+# JavaScript Engine Team
+/crates/js/                            @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-js-engine
+
+# JS APIs (Web APIs) Team
+/crates/webapis/                       @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-webapis
+
+# Networking Team
+/crates/net/                           @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-networking
+
+# Security & Storage Team
+/crates/security/                      @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-security-storage
+/crates/storage/                       @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-security-storage
+
+# Browser UX Team
+/crates/chrome/                        @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-browser-ux
+/platforms/                            @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-browser-ux
+
+# Devtools Team
+/crates/devtools/                      @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-devtools
+
+# Top-level binary + workspace config — cross-team review
+/crates/browser/                       @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-browser-ux
+/Cargo.toml                            @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-html @byui-cse/byui-browser-css @byui-cse/byui-browser-layout-rendering @byui-cse/byui-browser-js-engine @byui-cse/byui-browser-webapis @byui-cse/byui-browser-networking @byui-cse/byui-browser-security-storage @byui-cse/byui-browser-browser-ux @byui-cse/byui-browser-devtools
+
+# Architecture docs
+/docs/TECH_ARCHITECTURE.md             @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-html @byui-cse/byui-browser-css @byui-cse/byui-browser-layout-rendering @byui-cse/byui-browser-js-engine @byui-cse/byui-browser-webapis @byui-cse/byui-browser-networking @byui-cse/byui-browser-security-storage @byui-cse/byui-browser-browser-ux @byui-cse/byui-browser-devtools
+/docs/adr/                             @byui-cse/byui-browser-scrum-of-scrums @byui-cse/byui-browser-html @byui-cse/byui-browser-css @byui-cse/byui-browser-layout-rendering @byui-cse/byui-browser-js-engine @byui-cse/byui-browser-webapis @byui-cse/byui-browser-networking @byui-cse/byui-browser-security-storage @byui-cse/byui-browser-browser-ux @byui-cse/byui-browser-devtools
